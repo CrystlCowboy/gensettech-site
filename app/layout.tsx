@@ -1,5 +1,5 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
 import { Lato } from "next/font/google";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
