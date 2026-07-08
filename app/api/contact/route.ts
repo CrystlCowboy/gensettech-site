@@ -1,3 +1,5 @@
+import { Resend } from "resend";
+
 type ContactPayload = {
   email?: unknown;
   firstName?: unknown;
@@ -10,6 +12,15 @@ type ContactPayload = {
 
 function clean(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
 
 export async function POST(request: Request) {
@@ -60,8 +71,65 @@ export async function POST(request: Request) {
     source,
   };
 
-  // TODO: wire to Resend using the owner's verified sending domain.
-  void submission;
+  const apiKey = process.env.RESEND_API_KEY;
+
+  if (!apiKey) {
+    return Response.json(
+      { error: "Email service is not configured. Missing RESEND_API_KEY.", ok: false },
+      { status: 500 },
+    );
+  }
+
+  const formSource = source || "unknown";
+  const lines = [
+    `Name: ${submission.name}`,
+    submission.email ? `Email: ${submission.email}` : "Email: Not provided",
+    submission.phone ? `Phone: ${submission.phone}` : "Phone: Not provided",
+    `Form variant: ${formSource}`,
+    "",
+    "Message:",
+    submission.message,
+  ];
+  const resend = new Resend(apiKey);
+
+  try {
+    const { error } = await resend.emails.send({
+      from: "Genset Tech Website <noreply@gensetin.com>",
+      html: `
+        <h2>New website inquiry</h2>
+        <p><strong>Name:</strong> ${escapeHtml(submission.name)}</p>
+        <p><strong>Email:</strong> ${
+          submission.email ? escapeHtml(submission.email) : "Not provided"
+        }</p>
+        <p><strong>Phone:</strong> ${
+          submission.phone ? escapeHtml(submission.phone) : "Not provided"
+        }</p>
+        <p><strong>Form variant:</strong> ${escapeHtml(formSource)}</p>
+        <p><strong>Message:</strong></p>
+        <p>${escapeHtml(submission.message).replaceAll("\n", "<br />")}</p>
+      `,
+      subject: `New website inquiry from ${submission.name}`,
+      text: lines.join("\n"),
+      to: "genset@gen-set-tech.com",
+    });
+
+    if (error) {
+      return Response.json(
+        { error: `Unable to send email: ${error.message}`, ok: false },
+        { status: 502 },
+      );
+    }
+  } catch (error) {
+    return Response.json(
+      {
+        error: `Unable to send email: ${
+          error instanceof Error ? error.message : "Unexpected Resend failure."
+        }`,
+        ok: false,
+      },
+      { status: 502 },
+    );
+  }
 
   return Response.json({ ok: true });
 }
