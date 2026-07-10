@@ -43,7 +43,7 @@ export default function Home() {
       <section className="relative isolate min-h-[760px] overflow-hidden bg-dark-navy pb-20 pt-40 text-white">
         <Image
           alt="Generator equipment in the field"
-          className="object-cover"
+          className="object-cover object-[34%_18%] sm:object-[42%_24%] lg:object-center"
           fill
           priority
           sizes="100vw"

@@ -31,11 +31,11 @@ export function Header() {
         <Link aria-label="Genset Tech home" href="/">
           <Image
             alt="Genset Tech, Inc."
-            className="h-14 w-auto object-contain"
-            height={333}
+            className="h-[4.8rem] w-auto object-contain"
+            height={460}
             priority
             src="/site-logo.png"
-            width={333}
+            width={460}
           />
         </Link>
 
