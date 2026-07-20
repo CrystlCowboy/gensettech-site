@@ -3,6 +3,7 @@ import Image from "next/image";
 import { BrandLogoChips } from "./components/BrandLogoChips";
 import { Button } from "./components/Button";
 import { ContactForm } from "./components/ContactForm";
+import { Testimonials } from "./components/Testimonials";
 
 export const metadata: Metadata = {
   title: "Generator Service and Maintenance in Southern Indiana",
@@ -118,27 +119,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-20">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <p className="text-base font-black text-primary">What Our</p>
-          <h2 className="mt-2 text-4xl font-black text-dark-navy">Clients Say</h2>
-          <p className="mt-8 text-3xl font-black leading-tight text-dark-navy">
-            Daren and his team are fast, efficient, and professional!
-          </p>
-          <p className="mt-6 text-lg leading-8 text-body-gray">
-            I am a maintenance Director at a Long-Term Skilled Nursing facility,
-            so it is imperative that my generator stays in working condition. The
-            lives of my residents may someday rely on his services being number
-            1. I was not too familiar with how our Diesel Generator system
-            worked or how to maintain it in between scheduled Maintenance days.
-            Daren was happy to send a tech out to bring me up to speed. GenSet
-            Tech should always be your first choice.
-          </p>
-          <p className="mt-6 text-sm font-black uppercase tracking-[0.12em] text-primary">
-            - Clifton C.
-          </p>
-        </div>
-      </section>
+      <Testimonials />
 
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
