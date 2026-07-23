@@ -35,11 +35,6 @@ export function Footer() {
                 </a>
               </li>
             </ul>
-
-            <h2 className="mt-10 text-xl font-black uppercase tracking-[0.03em] text-dark-navy">
-              What Brands We Carry
-            </h2>
-            <BrandLogoChips className="mt-5" />
           </div>
 
           <div>
@@ -48,6 +43,13 @@ export function Footer() {
               idPrefix="footer"
               variant="footer"
             />
+          </div>
+
+          <div className="lg:col-span-2">
+            <h2 className="text-xl font-black uppercase tracking-[0.03em] text-dark-navy">
+              What Brands We Carry
+            </h2>
+            <BrandLogoChips className="mt-5" />
           </div>
         </div>
       </div>

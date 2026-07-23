@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { HeroInner } from "../components/HeroInner";
-import { TodoPlaceholder } from "../components/TodoPlaceholder";
 
 export const metadata: Metadata = {
   title: "Residential Generator Service",
@@ -27,28 +26,16 @@ export default function ResidentialPage() {
             smoothly through every season.
           </p>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {[1, 2, 3].map((item) => (
-              <div
-                className="overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm"
-                key={item}
-              >
-                <Image
-                  alt="Residential standby generator placeholder"
-                  className="h-64 w-full object-cover"
-                  height={330}
-                  src="/generator-placeholder.png"
-                  width={480}
-                />
-              </div>
-            ))}
-          </div>
-
           <div className="mt-12">
-            <TodoPlaceholder>
-              Any copy or sections below the gallery were not captured. Add the
-              original copy here once provided.
-            </TodoPlaceholder>
+            <div className="mx-auto aspect-[4/3] max-w-3xl overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm">
+              <Image
+                alt="Residential standby generator installed outside a home"
+                className="h-full w-full object-cover"
+                height={330}
+                src="/image5.jpeg"
+                width={480}
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -14,12 +14,27 @@ export const contact = {
 };
 
 export const brandLogos = [
-  { src: "/cummins-white.png", alt: "Cummins", width: 212, height: 212 },
-  { src: "/kohler-white.png", alt: "Kohler", width: 492, height: 107 },
+  { src: "/cummins-white.png", alt: "Cummins", width: 212, height: 212, scale: 1 },
+  { src: "/kohler-white.png", alt: "Kohler", width: 492, height: 107, scale: 1 },
   {
     src: "/generac-logo-all-white.png",
     alt: "Generac",
     width: 1024,
     height: 228,
+    scale: 1,
+  },
+  {
+    src: "/chamption-white.png",
+    alt: "Champion Global Power Equipment",
+    width: 619,
+    height: 169,
+    scale: 1,
+  },
+  {
+    src: "/caterpillar-white.jpeg",
+    alt: "Caterpillar",
+    width: 800,
+    height: 800,
+    scale: 1.5,
   },
 ];

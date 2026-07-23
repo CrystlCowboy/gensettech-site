@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { HeroInner } from "../components/HeroInner";
-import { TodoPlaceholder } from "../components/TodoPlaceholder";
 
 export const metadata: Metadata = {
   title: "Commercial Generator Service",
@@ -30,12 +30,34 @@ export default function CommercialPage() {
           <h2 className="mt-12 text-3xl font-black text-dark-navy">
             Commercial Generator Installation
           </h2>
-          <div className="mt-6">
-            <TodoPlaceholder>
-              Body copy for the &quot;Commercial Generator Installation&quot; section
-              and any sections below it was not captured. Add the original copy
-              here once provided.
-            </TodoPlaceholder>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                alt: "Commercial Cummins generator installed outside a building",
+                src: "/image1.jpeg",
+              },
+              {
+                alt: "Commercial standby generator equipment installed on a concrete pad",
+                src: "/image4.jpeg",
+              },
+              {
+                alt: "Genset Tech generator installation equipment on site",
+                src: "/IMG_0433.jpeg",
+              },
+            ].map((image) => (
+              <div
+                className="overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm"
+                key={image.src}
+              >
+                <Image
+                  alt={image.alt}
+                  className="h-64 w-full object-cover"
+                  height={330}
+                  src={image.src}
+                  width={480}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

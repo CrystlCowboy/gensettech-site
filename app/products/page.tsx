@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { HeroInner } from "../components/HeroInner";
-import { TodoPlaceholder } from "../components/TodoPlaceholder";
 
 export const metadata: Metadata = {
   title: "Generator Products",
@@ -53,15 +52,6 @@ export default function ProductsPage() {
                 </li>
               ))}
             </ul>
-
-            <div className="mt-10">
-              <TodoPlaceholder>
-                The bullet list continues past &quot;Large &amp; light
-                generators&quot; with an &quot;Off-grid power solutions&quot;
-                item and possibly more. Add the original remaining bullets here
-                once provided.
-              </TodoPlaceholder>
-            </div>
           </div>
 
           <div className="overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm">

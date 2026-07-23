@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { HeroInner } from "../components/HeroInner";
-import { TodoPlaceholder } from "../components/TodoPlaceholder";
 
 export const metadata: Metadata = {
   title: "Fuel Polishing",
@@ -49,10 +49,15 @@ export default function FuelPolishingPage() {
           </div>
 
           <div className="mt-12">
-            <TodoPlaceholder>
-              Confirm whether copy continues past this point and add the
-              original copy here if so.
-            </TodoPlaceholder>
+            <div className="mx-auto aspect-[4/3] max-w-3xl overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm">
+              <Image
+                alt="Diesel fuel polishing service equipment"
+                className="h-full w-full object-cover"
+                height={330}
+                src="/image3.jpeg"
+                width={480}
+              />
+            </div>
           </div>
         </div>
       </section>
