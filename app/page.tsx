@@ -107,7 +107,7 @@ export default function Home() {
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {whyItems.map((item) => (
               <div className="text-center" key={item.label}>
-                <div className="mx-auto flex h-28 w-28 items-center justify-center rounded-full bg-primary/10">
+                <div className="mx-auto flex h-28 w-28 items-center justify-center rounded-full bg-dark-navy/88 shadow-sm ring-1 ring-dark-navy/95">
                   <Image alt="" height={74} src={item.icon} width={74} />
                 </div>
                 <h3 className="mt-5 text-xl font-black text-dark-navy">
@@ -115,6 +115,20 @@ export default function Home() {
                 </h3>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white pb-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm">
+            <Image
+              alt="Genset Tech crew working on-site around a utility pole and service equipment"
+              className="object-cover"
+              fill
+              sizes="(min-width: 1024px) 1280px, 100vw"
+              src="/whole-team.jpeg"
+            />
           </div>
         </div>
       </section>
