@@ -59,7 +59,7 @@ export default function ProductsPage() {
               alt="Generator product placeholder"
               className="h-full min-h-96 w-full object-cover"
               height={640}
-              src="/generator-placeholder.png"
+              src="/Corner-house-generator.jpeg"
               width={720}
             />
           </div>

@@ -26,7 +26,7 @@ export default function ResidentialPage() {
             smoothly through every season.
           </p>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <div className="aspect-[4/3] overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm">
               <Image
                 alt="Two Genset Tech team members standing beside a newly installed residential standby generator"
@@ -42,6 +42,15 @@ export default function ResidentialPage() {
                 className="h-full w-full object-cover"
                 height={4284}
                 src="/happy-customer.jpeg"
+                width={5712}
+              />
+            </div>
+            <div className="aspect-[4/3] overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm">
+              <Image
+                alt="Homeowner posing beside a residential standby generator installed at the corner of a house"
+                className="h-full w-full object-cover"
+                height={4284}
+                src="/Corner-house-pose-generator.jpeg"
                 width={5712}
               />
             </div>
